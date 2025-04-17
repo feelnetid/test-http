@@ -1,0 +1,13 @@
+
+
+CREATE COMPUTE MODULE MF_MAIN_CONNECTION_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+		SET OutputRoot.JSON.Data.UUID = UUIDASCHAR;
+		SET OutputRoot.JSON.Data.Datetime = CURRENT_TIMESTAMP;
+		SET OutputRoot.JSON.Data.Message = 'Dummy service....';
+		
+		RETURN TRUE;
+	END;
+END MODULE;
